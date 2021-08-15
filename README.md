@@ -8,10 +8,12 @@ scenarios. Attach the following to an email when you are done:
 a. The last step of the second scenario has an incorrect error message; ""Sorry, this user has been banned.". It should be "Sorry, this user has been locked out." I ran the test 
 with correct version.
 b. I'm not positive this is a bug, but the last line of the first scenario says "And I verify the App Logo exists." The app logo is actually a .svg file set as the backgroud 
-of the app-logo div by a css property. In general, selenium is best at findinding and reporting the status of elements of the webpage DOM. However I was able to confirm with selenium 
-that the Css Values of the app-logo div background values contained the filename of the logo image that I expected.
+of the app-logo div by a CSS property. In general, selenium is best at finding and reporting the status of elements of the webpage DOM. However I was able to confirm with selenium 
+that the CSS values of the app-logo div background contained the filename of the logo image that I expected, so I tested with that.
 
 NOTE: The browser to test with and the OS were not specified as part of the test. I choose to test with google chrome and Windows 10 as the OS. Since different drivers for the 
 same browser are used with different OSs, I just put the Windows chromedriver in a folder on my path, therefor the chromedriver location is not specified in the code.  
 
-NOTE: Code was created in Intellij and ran from the command line "mvn clean test".  
+NOTE: Code was created in Intellij and ran from the command line with "mvn clean test".  
+
+Also, the project instructions were "I just want to see the tests run" so I didn't create a @before hook to create a webdriver or an @after hook to close the webpage when the test finished, but for an actual project I normally would.
